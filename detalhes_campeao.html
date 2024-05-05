@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/detalhes.css">
+    <title>Detalhes do Campeão</title>
+</head>
+<body>
+    <h1>Detalhes do Campeão</h1>
+    <div id="detalhes-container">
+        <p id="nome"></p>
+        <p id="nivel"></p>
+        <p id="rota"></p>
+        <img id="imagem" src="" alt="">
+    </div>
+    <h2 id="mensagem-nivel"></h2> <!-- Elemento para exibir a mensagem do nível -->
+    <button id="botao-voltar" onclick="voltarPaginaInicial()">Voltar à Página Inicial</button>
+    <script>
+        function getParameterByName(name) {
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(window.location.href);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        var nome = getParameterByName('nome');
+        var nivel = parseInt(getParameterByName('nivel')); // Convertendo para número inteiro
+        var rota = getParameterByName('rota');
+        var imagem = getParameterByName('imagem');
+
+        document.getElementById('nome').innerText = 'Nome: ' + nome;
+        document.getElementById('nivel').innerText = 'Nível: ' + nivel;
+        document.getElementById('rota').innerText = 'Rota: ' + rota;
+        document.getElementById('imagem').src = imagem;
+
+        // Adicionando mensagem específica do nível
+        var mensagemNivel;
+        if (nivel < 1000) {
+            mensagemNivel = 'Este campeão é do nível Ferro.';
+        } else if (nivel >= 1001 && nivel <= 2000) {
+            mensagemNivel = 'Este campeão é do nível Bronze.';
+        } else if (nivel >= 2001 && nivel <= 5000) {
+            mensagemNivel = 'Este campeão é do nível Prata.';
+        } else if (nivel >= 5001 && nivel <= 7000) {
+            mensagemNivel = 'Este campeão é do nível Ouro.';
+        } else if (nivel >= 7001 && nivel <= 8000) {
+            mensagemNivel = 'Este campeão é do nível Platina.';
+        } else if (nivel >= 8001 && nivel <= 9000) {
+            mensagemNivel = 'Este campeão é do nível Esmeralda.';
+        } else if (nivel >= 9001 && nivel <= 10000) {
+            mensagemNivel = 'Este campeão é do nível Diamante.';
+        } else {
+            mensagemNivel = 'Este campeão é do nível Mestre.';
+        }
+
+        document.getElementById('mensagem-nivel').innerText = mensagemNivel;
+
+        function voltarPaginaInicial() {
+            window.location.href = "../index.html";
+        }
+    </script>
+</body>
+</html>

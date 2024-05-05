@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(145, 17, 17);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Alteramos para min-height para garantir que o corpo estenda-se pelo menos até a altura da tela */
+}
+h1{
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+}
+
+#campeoes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.campeao {
+    width: calc(25% - 20px);
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.campeao img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px 5px 0 0;
+}
+
+.campeao .info {
+    padding: 10px;
+}
+
+.campeao h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
