@@ -14,12 +14,7 @@ let campeões = [
         rota: "Solo",
         imagem: "./src/images/Aatrox.jpg"
     },
-    {
-        nome: "Draven",
-        nivel: 5514,
-        rota: "Duo/Atirador",
-        imagem: "./src/images/draven.jpg"
-    },
+    
     {
         nome: "Garen",
         nivel: 245,
